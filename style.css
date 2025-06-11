@@ -109,18 +109,17 @@ body {
 }
 
 .heropre {
-    width: 100%;
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.heropre pre {
-    color: white;
-    font-size: clamp(14px, 2vw, 16px);
+.heropre p {
+    font-size: 1.2rem;
     line-height: 1.6;
-    white-space: pre-wrap;
-    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
 }
 
 .contactbtn {
@@ -643,15 +642,46 @@ body {
         text-align: center;
         gap: 5px;
     }
+    
+     .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
 
     .herocontnav {
-        flex-direction: column;
-        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
     }
 
     .heroul {
-        gap: 15px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #252525;
+        text-align: center;
+        padding: 20px 0;
     }
+
+    .heroul.active {
+        display: block;
+    }
+    
 
     .featc1 {
         grid-template-columns: 1fr;
