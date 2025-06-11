@@ -144,6 +144,7 @@ body {
     border: 1px solid #EFFE8B;
 }
 
+
 /* Expertise section */
 .expertise {
     padding: 40px 20px;
@@ -169,6 +170,8 @@ body {
 
 .featscont {
     width: 100%;
+    height: auto;
+    display: flex;
 }
 
 .featc1 {
@@ -222,6 +225,7 @@ body {
     width: 30px;
     border-radius: 50%;
 }
+
 
 .flexy2 h3 {
     font-size: 24px;
@@ -296,7 +300,8 @@ body {
 .sc-right {
     flex-basis: 40%;
     background-image: url('image.png');
-    background-size: 40% 100%;
+    background-size: 40% 100% ;
+    background-repeat: no-repeat !important;
     background-position: right bottom;
     background-attachment: fixed;
     border: 10px solid black;
@@ -516,7 +521,7 @@ body {
     }
 }
 
-@media (max-width: 966px) {
+@media (max-width: 969px) {
     .why-choose-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -524,6 +529,16 @@ body {
     .grid-item-empty {
         display: none;
     }
+    .sc-right{
+         background-size: cover;
+         background-position: right bottom;
+         background-attachment: fixed;
+    }
+    .flexum{
+        position: relative;
+        bottom: 40;
+    } 
+  
 }
 
 /* Responsive breakpoints */
@@ -565,7 +580,7 @@ body {
         height: 200px;
         order: -1;
     }
-
+  
     .spec-header {
         flex-direction: column;
         align-items: center;

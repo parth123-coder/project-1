@@ -1,0 +1,92 @@
+  <div class="why-choose-grid">
+                <div class="grid-item grid-item-empty"></div>
+                <div class="grid-item grid-item-1">
+                    <div class="feature-card-overlay">
+                        <h3>Transparent Pricing</h3>
+                        <p>Clear and competitive pricing for all construction services.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item grid-item-2">
+                    <div class="feature-card-overlay">
+                        <h3>Skilled & Certified Team</h3>
+                        <p>Our team comprises qualified professionals with a focus on security and quality.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item grid-item-3">
+                    <div class="feature-card-overlay">
+                        <h3>Customer Satisfaction</h3>
+                        <p>Ensuring exceptional customer support and satisfaction throughout the construction process.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item grid-item-4">
+                    <div class="feature-card-overlay">
+                        <h3>Decades of Experience</h3>
+                        <p>Bringing over 25 years of expertise in delivering construction solutions.</p>
+                    </div>
+                </div>
+                <div class="grid-item grid-item-empty"></div>
+            </div>
+        </section>
+
+        .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 500px 500px;
+    gap: 20px;
+    width: 100%;
+    max-width: 2300px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-item-1 {
+    background-image: url('https://static.wixstatic.com/media/84770f_fc0575186492407fac5f238077ddc0e6~mv2.jpeg');
+}
+
+.grid-item-2 {
+    background-image: url('https://static.wixstatic.com/media/84770f_67e9d3f9225b44e280b3b942a226d262~mv2.jpeg');
+}
+
+.grid-item-3 {
+    background-image: url('https://static.wixstatic.com/media/84770f_4778681ca088411a9dfece54b91546df~mv2.jpeg');
+}
+
+.grid-item-4 {
+    background-image: url('https://static.wixstatic.com/media/84770f_af1ca8b6a9d04d2cb85195f480a4603f~mv2.jpeg');
+}
+
+/* Feature Cards */
+.feature-card-overlay {
+    position: absolute;
+    background-color: #EFFE8B;
+    padding: 20px;
+    border-radius: 0;
+    max-width: 300px;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+}
+
+.feature-card-overlay h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.feature-card-overlay p {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.4;
+}
