@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS animations
     AOS.init({
-        delay: 300,
-        offset: 200,
+        delay: 200,
+        offset: 100,
         duration: 1000,
         once: true
     });
