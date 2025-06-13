@@ -586,10 +586,11 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .feature-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .feature-overlay {
@@ -601,7 +602,7 @@ body {
     padding: 32px;
     max-width: 320px;
     border-radius: 16px;
-    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: box-shadow 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     z-index: 2;
     opacity: 1;
@@ -609,7 +610,7 @@ body {
 }
 
 .feature-item:hover .feature-overlay {
-    transform: translateY(-15px) scale(1.05);
+    transform: translateY(-10px) scale(1.04);
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
 }
 
