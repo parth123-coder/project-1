@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on links
     const mobileLinks = document.querySelectorAll('.mobile-link');
     mobileLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -31,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Enhanced fade in animation on scroll
     const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px 0px -80px 0px'
@@ -42,18 +38,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.classList.add('visible');
-                }, index * 150); // Stagger animation
+                }, index * 150); 
             }
         });
     }, observerOptions);
 
-    // Observe fade-in elements
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => {
         observer.observe(el);
     });
 
-    // Enhanced parallax effect for hero section
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const parallax = document.querySelector('.hero');
@@ -64,11 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Enhanced button interactions with ripple effect
     const buttons = document.querySelectorAll('.hero-button, .cta-button');
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Create ripple effect
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
@@ -95,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth reveal animations for sections
     const sections = document.querySelectorAll('.section');
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -113,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
 
-    // Enhanced card hover effects
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -126,8 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Expertise and Specialization Section Animation and Hover ---
-    // Intersection Observer for animations on expertise and specialization cards
+    
     const expSpecObserverOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -142,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, expSpecObserverOptions);
 
-    // Observe expertise and specialization cards for animation
     const expSpecAnimatedElements = document.querySelectorAll('.expertise-card, .specialization-card');
     
     expSpecAnimatedElements.forEach(el => {
@@ -152,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
         expSpecObserver.observe(el);
     });
 
-    // Add hover effects for expertise and specialization cards
     const expSpecCards = document.querySelectorAll('.expertise-card, .specialization-card');
     
     expSpecCards.forEach(card => {
@@ -165,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add CSS styles for hover effects on expertise and specialization cards
     const style = document.createElement('style');
     style.textContent = `
         .expertise-card:hover,
@@ -176,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
-// Add CSS for ripple effect and enhanced animations
 const style = document.createElement('style');
 style.textContent = `
     @keyframes ripple-animation {
@@ -191,3 +176,48 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+const buttons = document.querySelectorAll('.hero-button, .cta-button, .footer-hero-button');
+buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            animation: ripple-animation 0.8s linear;
+        `;
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 800);
+    });
+});
+
+const sections = document.querySelectorAll('.section, .footer-hero');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.15 });
+
+sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(50px)';
+    section.style.transition = 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    sectionObserver.observe(section);
+});
