@@ -707,6 +707,7 @@ body {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     align-self: flex-start;
     box-shadow: 0 10px 30px rgba(239, 254, 139, 0.3);
+    margin-bottom: 20px;
 }
 
 .footer-hero-button:hover {
@@ -1345,7 +1346,7 @@ body {
 
 .stat-card {
     background: #f8f9fa;
-    padding: 32px 24px;
+    padding: 32px 50px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -1354,6 +1355,7 @@ body {
     min-height: 280px;
     transition: all 0.3s ease;
 }
+
 
 .stat-card:hover {
     transform: translateY(-5px);
@@ -1457,6 +1459,14 @@ body {
     .expertise-grid-second,
     .specializations-grid {
         grid-template-columns: 1fr;
+    }
+    .shift1{
+        position: relative;
+        top: 305px;
+    }
+    .shift2{
+        position: relative;
+        bottom: 305px;
     }
 
     .specializations-header {
