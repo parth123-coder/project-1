@@ -1706,3 +1706,11 @@ body {
         font-size: 13px;
     }
 }
+/*  add media queries 930px */
+@media (max-width: 930px) {
+    .expertise-grid-first,
+    .expertise-grid-second,
+    .specializations-grid {
+        grid-template-columns: 1fr;
+    }
+}
