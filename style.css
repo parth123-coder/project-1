@@ -1791,3 +1791,31 @@ body {
     }
 
 }
+@media (max-width:468px) {
+    .headline{
+        position: relative;
+        right: 50px;
+    }
+}
+@media (max-width:426px) {
+    .headline{
+       font-size: 30px;
+    }
+}
+@media (max-width:420px) {
+    .subtitle{
+        position: relative;
+        right: 70px;
+    }
+    .hero-cta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* width: 100vw; */
+        width: 100%;
+        margin: 20px auto;
+        position: relative;
+        right:70px;
+    }
+}
