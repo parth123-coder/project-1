@@ -142,11 +142,14 @@ body {
   color: black;
   border-radius: 0.5rem;
   overflow: hidden;
-  width: 700px;
+  width: 554px;
   height: 400px;
   margin-left: 200px;
 
 
+}
+.hero-right{
+    margin-left: -250px;
 }
 
 /* Accent boxes */
