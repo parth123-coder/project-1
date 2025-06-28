@@ -291,4 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    document.getElementById("closeCookieBtn").addEventListener("click", function () {
+  document.getElementById("cookieBanner").style.display = "none";
+});
+
 });
